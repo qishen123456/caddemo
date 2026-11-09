@@ -1,0 +1,13 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>图因智检 · 图纸检测工作台</title><link rel="stylesheet" href="/static/style.css?v=6">
+<header><strong>GRAPHCAUSE</strong><span>图因智检</span><a href="/static/compare.html" style="color:white;margin-left:auto">正反样本对比</a></header>
+<main><h1>图纸检测工作台</h1><p>新能源汽车零部件 · 图纸规范审查</p>
+<form id="controls"><label>检测图纸<select id="sample"><option value="reference">减速器端盖 · 基准图</option><option value="revision" selected>减速器端盖 · 缺陷图</option><option value="upload" disabled>自定义图纸</option></select></label>
+<label>图纸类型<select id="kind"><option value="part">零件图</option><option value="assembly">装配图</option><option value="schematic">原理图</option></select></label>
+<label class="upload">上传 PDF<input type="file" id="file" accept="application/pdf"></label>
+<button class="primary">开始检测</button></form>
+<div id="message" role="status"></div>
+<section><article><div class="bar"><h2>图纸预览</h2><select id="page" aria-label="选择页码" hidden></select><label id="toggleWrap" hidden><input type="checkbox" id="toggle" checked>异常标记</label><button id="zoomOut" aria-label="缩小">−</button><output id="zoomLevel">100%</output><button id="zoomIn" aria-label="放大">＋</button><button id="reset">适合窗口</button></div>
+<div id="viewport"><div id="sheet"><img id="drawing" alt="工程图纸" draggable="false"><div id="marks"></div></div></div></article>
+<aside><div class="bar"><h2>检测报告</h2><button id="download" disabled>导出 JSON</button></div><nav class="tabs"><button id="rulesTab" aria-pressed="true">规范检查</button><button id="symbolsTab" aria-pressed="false">特殊标记</button></nav><p id="summary">选择图纸后开始检测</p><div id="results"></div><div id="symbols" hidden></div></aside></section></main>
+<script src="/static/workbench.js?v=6"></script></html>
